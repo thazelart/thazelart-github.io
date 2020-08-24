@@ -17,11 +17,11 @@ module.exports = {
   themeConfig: {
     image: 'img/terraform-validator.png',
     disableDarkMode: true,
-    algolia: {
-      apiKey: '050bcd29a00cc5551793c2d6eadfb2a1',
-      indexName: 'terraform-validator',
-      algoliaOptions: {}, // Optional, if provided by Algolia
-    },
+    // algolia: {
+    //   apiKey: '050bcd29a00cc5551793c2d6eadfb2a1',
+    //   indexName: 'terraform-validator',
+    //   algoliaOptions: {}, // Optional, if provided by Algolia
+    // },
     navbar: {
       title: '',
       logo: {
@@ -29,7 +29,11 @@ module.exports = {
         src: 'img/terraform-validator.svg',
       },
       links: [
-        {to: 'docs/getting-started/introduction', label: 'Docs', position: 'left'},
+        {
+          href: 'https://terraform-validator.readthedocs.io',
+          label: 'Documentation',
+          position: 'left',
+        },
         {
           href: 'https://hub.docker.com/r/thazelart/terraform-validator',
           label: 'DockerHub',

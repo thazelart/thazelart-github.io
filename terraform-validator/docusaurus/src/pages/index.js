@@ -75,7 +75,7 @@ function Home() {
                 'get-started button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/getting-started/introduction')}>
+              to={useBaseUrl('https://terraform-validator.readthedocs.io')}>
               Get Started
             </Link>
           </div>
