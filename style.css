@@ -8,7 +8,5 @@ html, body {
 
 #resume_pdf {
     margin: 0 !important;
-    position:absolute;
-    top:0;
-    left:0;
+    display: inline-block;
 }
