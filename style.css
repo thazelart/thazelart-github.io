@@ -5,3 +5,9 @@ html, body, object {
     width: 100%;
     overflow: hidden;
 }
+
+.container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
