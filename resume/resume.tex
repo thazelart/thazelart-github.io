@@ -1,0 +1,247 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/PandaScience/FortySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors
+% ------------
+% * ifokkema
+% * Bertbk
+% * Hespe
+% * esben
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	maincolor=cvartifakt,
+	sidecolor=cvgray,
+	sidebartextcolor=cvwhite,
+	sectioncolor=cvartifakt,
+	subsectioncolor=cvgray,
+	% itemtextcolor=cvgray,
+	sidebarwidth=0.36\paperwidth,
+    topbottommargin=0.04\paperheight,
+	% leftrightmargin=20pt,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+	% logowidth=4.5cm,
+	% logospace=5mm,
+	% logoposition=before,
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Thibault Hazelart}
+% job title/career
+\cvjobtitle{Site Reliability Engineer}
+
+%% optional information
+% profile picture
+\cvprofilepic{pics/profile.png}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+% \cvbirthday{31 mars 1992}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{1750 chemin du château d'eau\newline31600 Seysses - FRANCE}
+% phone number
+\cvphone{+33 6 31 45 99 52}
+% email address
+\cvmail{thibault.hazelart@gmail.com}
+% any other custom entry
+\cvcustomdata{\faLinkedin}{\href{https://linkedin.com/in/thazelart}{LinkedIn}}
+\cvcustomdata{\faGithub}{\href{https://github.com/thazelart}{GitHub}}
+
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+    \color{sidebartextcolor}
+	
+	\profilesection{A propos de moi}
+	\aboutme{
+	    Automation fan from the beginning, I would like to bring my skills and spirit to a company that trust as much in the open source than I do.	}
+	
+	\profilesection{Compétences}
+		\skill{\faCog}{Automation}
+		    \pointskill[1em]{}{Terraform}{4}
+		    \pointskill[1em]{}{Ansible}{4}
+		\skill{\faCode}{Programming}
+		    \pointskill[1em]{}{Bash}{4.5}
+		    \pointskill[1em]{}{Python}{3.5}
+		    \pointskill[1em]{}{Golang}{3}
+		\skill{\faCloud}{Cloud}
+		    \pointskill[1em]{}{GCP}{4}
+		    \pointskill[1em]{}{Azure}{3}
+		\skill{\faShip}{Misc}
+		    \pointskill[1em]{}{Docker}{4}
+		    \pointskill[1em]{}{Kubernetes}{3.5}
+		    \pointskill[1em]{}{Kafka}{3}
+		
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/}}
+	\profilesection{Langues}
+	    \pointskill{\flag{GB.png}}{English}{4}
+		\pointskill{\flag{FR.png}}{French}{5}
+}
+
+
+%-------------------------------------------------------------------------------
+%                              PERSONNAL TRICKS
+%-------------------------------------------------------------------------------
+% \setitemize[0]{label=$\rightarrow$, leftmargin=*, noitemsep}
+\setlist[itemize]{label=$\rightarrow$, leftmargin=*, noitemsep, topsep=0pt, parsep=0pt, nosep}
+
+
+\makeatletter
+\newcommand\thefontsize{\f@size pt}
+\makeatother
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar{}
+
+\cvsection{\faSuitcase\hspace{5pt} Working experience}
+\begin{cvtable}[2]
+% \cvitem{\thefontsize}{\thefontsize}{\thefontsize}
+%	    {\thefontsize}
+	\cvitem{jan 2021}{Site Reliability Engineer}{Continental, Toulouse}
+	    {
+	    \textcolor{maincolor}{2021 | Key as a Service}
+	    \begin{itemize}
+            \item Application maintenance: \textbf{Kubernetes}, Hashicorp Vault, \textbf{AWS}, Envoy, \textbf{Golang}.
+            \item Automation of infrastructure and application installation: Terraform, Helm, Gitlab, Bash.
+            \item \textbf{Continuous improvement} of monitoring and alerting: Prometheus, Grafana, Kibana.
+            \item Manage and technical lead of the \textbf{worldwide} SRE team (France and India).
+        \end{itemize}
+		}
+	\cvitem{2019 - 2020}{DevOps Engineer / SRE}{Conserto, Toulouse}
+	    {
+	    \textcolor{maincolor}{2020 | La Poste}
+	    \begin{itemize}
+            \item Architecture of the automation tools \textbf{Ansible} / \textbf{Ansible Tower}.
+            \item Implementation of Ansible tests with \textbf{molecule}, \textbf{docker} et \textbf{goss}.
+            \item Implementation of \textbf{CI} and development best practices: Git, Ansible.
+        \end{itemize}
+        \vspace{8pt}
+	    \textcolor{maincolor}{2020 | Air France}
+	    \begin{itemize}
+            \item \textbf{Technical leader} and architecture of the automation tools ansible and ansible tower.
+            \item Automated image creation on Vsphere thanks to \textbf{Packer}.
+            \item Implementation of \textbf{CI} and \textbf{development best practices}: Git, Ansible, \textbf{Terraform}, bash, packer.
+            \item Implementation of \textbf{agility} in connection with the team leader.
+        \end{itemize}
+        \vspace{8pt}
+	    \textcolor{maincolor}{2019 - 2020 | MeetUp organization and preparation}
+	    \begin{itemize}
+	        \item \href{https://www.meetup.com/fr-FR/AGILE-BY-CONSERTO/events/267376871/}{Design of a serious game around the concepts of agility.}.
+	    \end{itemize}
+		}
+	\cvitem{2015 -- 2019}{DevOps Engineer / SRE}{Decathlon, Lille}
+	    {
+	    \textcolor{maincolor}{2018 -2019 | Decathlon Offer}
+	    \begin{itemize}
+            \item Creation of an \textbf{SRE} team in charge of the installation and MCO of the IS transformation projects.
+            \item Architecture of projects on \textbf{GCP} and \textbf{Kubernetes}.
+            \item \textbf{Terraform technical leader} and \textbf{trainer} of the team.
+            \item Sharing the SRE culture with application teams.
+        \end{itemize}
+        \vspace{8pt}
+        \textcolor{maincolor}{2015 -2019 | Decathlon Commerce}
+	    \begin{itemize}
+            \item Automation of deployments and recurring tasks with \textbf{ansible}, \textbf{python}, \textbf{bash} and \textbf{Rundeck}.
+            \item Run platforms on \textbf{CentOS/RedHat} from integration to production.
+            \item Implementation of innovative projects using \textbf{Kafka}, \textbf{Docker}, \textbf{Rancher 1}.
+            \item Definition and implementation of the \textbf{DRP}.
+            \item Use of monitoring tools: \textbf{ELK}, \textbf{Graphana} and \textbf{Prometheus}.
+            \item System \textbf{trainer} and support of Chinese teams.
+            \item Agile organization: \textbf{SCRUM} then \textbf{Kanban}.
+        \end{itemize}
+		}
+\end{cvtable}
+
+\cvsection{\faGraduationCap\hspace{5pt} Education}
+\begin{cvtable}[2]
+	\cvitem{2020}{Microsoft Azure Administrator (AZ-104)}{M2i Montpellier}
+		{4 days of training dedicated to Microsoft Azure administration.}
+	\cvitem{2019}{Architecting with GCP: Infrastructure}{SFEIR institute}
+		{3 days of training dedicated to the architecture with GCP.}
+	\cvitem{2018}{Kafka: Confluent Operations}{Zenika Academy}
+		{3 days of training dedicated to the architecture and administration of a Kafka cluster.}
+	\cvitem{2013 - 2015}{Master TIIR (mention bien)}{Université Lille 1}
+		{Master degree dedicated to system, network and security.}
+\end{cvtable}
+
+\vspace{-11pt}
+\end{document}
