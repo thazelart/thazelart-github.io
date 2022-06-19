@@ -3,6 +3,7 @@ html, body {
     padding: 0px !important;
     height: 100%; 
     overflow: hidden;
+    border: 0px;
 }
 
 #resume_pdf {
