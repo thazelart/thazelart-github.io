@@ -1,0 +1,34 @@
+---
+name: Build LaTeX document and deploy to GitHub pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch name to trigger deployment
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Set up Git repository
+        uses: actions/checkout@v2
+      - 
+        name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: resume
+          root_file: resume.tex
+      - 
+        name: Move the resume to github pages generated folder
+        run: mv resume/resume.pdf site/resume_Thibault_HAZELART.pdf
+      - 
+        name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        # If you're changing the branch from main, 
+        # also change the `main` in `refs/heads/main` 
+        # below accordingly.
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
