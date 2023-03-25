@@ -64,7 +64,7 @@
 % Companies
 \definecolor{cvthales}{HTML}{00bc7f}
 \definecolor{cvconti}{HTML}{F7A924}
-\definecolor{cvartifakt}{HTML}{6586fc}
+\definecolor{cvartifakt}{HTML}{0097B2}
 % set default values
 \colorlet{maincolor}{cvblue}
 \colorlet{sidecolor}{cvsidecolor}
