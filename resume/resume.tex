@@ -108,7 +108,7 @@
 % date of birth
 % \cvbirthday{31 mars 1992}
 % short address/location, use \newline if more than 1 line is required
-\cvaddress{Toulouse area, FRANCE}
+\cvaddress{Toulouse area}
 % phone number
 % \cvphone{+33 6 31 45 99 52}
 % email address
@@ -126,33 +126,33 @@
 \addtofrontsidebar{
     \color{sidebartextcolor}
 	
-	\profilesection{A propos de moi}
+	\profilesection{About me}
 	\aboutme{
-	    Automation fan from the beginning, I would like to bring my skills and spirit to a company that trust as much in the open source than I do.
+	    .
 	}
 	
-	\profilesection{Compétences}
+	\profilesection{Skills}
 		\skill{\faCloud}{Cloud}
-			\pointskill[1em]{}{AWS}{4}
-			\pointskill[1em]{}{GCP}{4}
-			\pointskill[1em]{}{Azure}{3}
+			\pointskill[1em]{}{AWS}{4.5}
+			\pointskill[1em]{}{GCP}{4.5}
+			\pointskill[1em]{}{Azure}{3.5}
 		\skill{\faCog}{Automation}
 		    \pointskill[1em]{}{Terraform}{4}
-		    \pointskill[1em]{}{Ansible}{4}
+		    \pointskill[1em]{}{Ansible}{4.5}
 		\skill{\faCode}{Programming}
-		    \pointskill[1em]{}{Bash}{4.5}
+		    \pointskill[1em]{}{Bash}{5}
 		    \pointskill[1em]{}{Golang}{4}
 		    \pointskill[1em]{}{Python}{3.5}
 		\skill{\faShip}{Misc}
-			\pointskill[1em]{}{Observability}{4}
-		    \pointskill[1em]{}{Kubernetes}{4}
-		    \pointskill[1em]{}{Kafka}{3}
+			  \pointskill[1em]{}{Observability}{4}
+		    \pointskill[1em]{}{Kubernetes}{4.5}
+		    \pointskill[1em]{}{Kafka}{3.5}
 		
 	% include gosquare national flags from https://github.com/gosquared/flags;
 	% naming according to ISO 3166-1 alpha-2 country codes
 	\graphicspath{{pics/flags/}}
-	\profilesection{Langues}
-	    \pointskill{\flag{GB.png}}{English}{4}
+	\profilesection{Languages}
+	    \pointskill{\flag{GB.png}}{English}{4.5}
 		\pointskill{\flag{FR.png}}{French}{5}
 }
 
@@ -178,18 +178,19 @@
 \begin{cvtable}[2]
 % \cvitem{\thefontsize}{\thefontsize}{\thefontsize}
 %	    {\thefontsize}
-	\cvitem{oct 2022}{Site Reliability Engineer}{Artifakt, Remote}
+	\cvitem{oct 2022}{Lead Site Reliability Engineer}{Artifakt, Remote}
 	{
+		\vspace{-8pt}
 		\begin{itemize}
-			\item Creation of a \textbf{Golang / gRPC API} to abstract all the cloud technologies: kubernetes, argo-workflow, git, kaniko.
-			\item \textbf{Design} and \textbf{implementation} of the new product cloud architecture: GCP, Terraform, ArgoCD, Helm, ExternalDNS, ExternalSecrets, CertManager, Traefik.
+			\item Architecture and development of a \textbf{Golang / gRPC API} to abstract all the cloud technologies: kubernetes, argo-workflow, git, kaniko.
+			\item \textbf{Design} and \textbf{implementation} of cloud architecture: GCP, Terraform, ArgoCD, Helm, ExternalDNS, ExternalSecrets, CertManager, Traefik.
 			\item Design of the new product \textbf{observability}: Prometheus, Grafana, Loki.
 			\item Writing of technical documentation.
 		\end{itemize}
 	}
-	\cvitem{2021 - 2022}{Site Reliability Engineer}{Continental, Toulouse}
+	\cvitem{2021 - 2022}{Lead Site Reliability Engineer}{Continental, Toulouse}
 	{
-		\textcolor{maincolor}{2022 | Key as a Service}
+		\textcolor{maincolor}{2022 | Lead SRE - Key as a Service program}
 			\begin{itemize}
 				\item \textbf{Leader of the SRE team of 8 people} (Operations and platform).
 				\item Technical lead: Onboarding / support / training of new team members, code reviews.
@@ -197,7 +198,7 @@
 				\item Reporting: Proposals and implementation of processes for the continuous improvement of the team both from an organisational and technical point of view.
 			\end{itemize}
 			\vspace{8pt}
-			\textcolor{maincolor}{2021 | Key as a Service}
+			\textcolor{maincolor}{2021 | SRE - Key as a Service program}
 			\begin{itemize}
 				\item Application maintenance: Kubernetes, Hashicorp Vault, Envoy, \textbf{AWS}, MongoDB, PostgresQL, Golang.
 				\item Automation of infrastructure and application installation: Terraform, Helm, Gitlab, Bash, Jenkins.
@@ -207,15 +208,17 @@
 	}
 	\cvitem{2019 - 2020}{DevOps Engineer / SRE}{Conserto, Toulouse}
 	{
-		\textcolor{maincolor}{2020 | La Poste}
+		\textcolor{maincolor}{2020 | Air France}
 		\begin{itemize}
-			\item \textbf{Technical leader} and architecture of the automation tools: ansible, ansible tower, terraform.
-			\item Implementation of \textbf{CI} and \textbf{development best practices}: Git, Ansible, \textbf{Terraform}, bash, packer.
-			\item Implementation of \textbf{agility}.
+			\item \textbf{Technical lead} and \textbf{architecture} of ansible 2.8 and ansible tower 3.6 automation tools.
+			\item Automated image creation on Vsphere with Packer 1.4.
+			\item Implementation of CI and development \textbf{best practices}: Git, Ansible, Terraform, bash, packer.
+			\item \textbf{Agile} organization setup in conjunction with the team leader.
 		\end{itemize}
 	}
 	\cvitem{2015 - 2019}{DevOps Engineer / SRE}{Decathlon, Lille}
 	{
+		\vspace{-8pt}
 		\begin{itemize}
 			\item Architecture of cloud projects: terraform, \textbf{GCP}, \textbf{Kubernetes}.
 			\item Sharing the SRE culture with application teams.
